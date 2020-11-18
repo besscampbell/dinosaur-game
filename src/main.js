@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import DinoAPI from './dino-service.js';
+// import Dino from './dinosaur';
 
 function clearFields() {
   $("#letterGuess").val("");
@@ -14,6 +15,7 @@ $(document).ready(function() {
     console.log(promise);
     promise.then(function(response) {
       const body = JSON.parse(response);
+      
       console.log(`${body[0][0]}`);
       $('#dinoWord').text(`${body[0][0]}`);
     }, function(error) {
